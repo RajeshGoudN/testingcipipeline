@@ -1,17 +1,17 @@
 name: "testing-ci-pipeline"
 on:
- push:
-  branches:
-  - main
+  push:
+    branches:
+      - main
 jobs:
- run_python_app:
-  runs_on: ubuntu-latest
-  steps:
-  -name: checkout code
-  uses: actions/checkout@v2
-  -name: set up python
-  uses: actions/setup-python@v4
-  with:
-    python-version: '3.9'
-  -name: Run Pandas job
-  run: python app.py
+  run_python_app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Run Pandas job
+        run: python app.py
